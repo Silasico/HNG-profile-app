@@ -1,20 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {View, StyleSheet} from "react-native"
+import MainScreen from "./screens/main"
+import WebScreen from "./screens/Web"
+import Constants from "expo-constants"
+import "react-native-gesture-handler"
+import { createStackNavigator } from "@react-navigation/stack"
+import { NavigationContainer } from "@react-navigation/native"
+
+const Stack = createStackNavigator()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <Stack.Navigator screenOptions ={{headerShown: false}}>
+          <Stack.Screen name = "Home" component = {MainScreen} />
+          <Stack.Screen name = "Web" component = {WebScreen} />
+        </Stack.Navigator>
+        <StatusBar style="auto" />
+      </View>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    paddingTop: Constants.statusBarHeight
+  }
+})
