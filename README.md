@@ -20,3 +20,7 @@ To login to your eas account
 
 ### eas build
 To build your application in the desired Operating system
+
+##To preview the app, you can click the link.
+
+### [preview](https://appetize.io/app/424kifznqot6urjgmq3ztjg54q?device=nexus5&osVersion=11.0&scale=50)
